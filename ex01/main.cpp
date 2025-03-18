@@ -6,7 +6,7 @@
 /*   By: amousaid <amousaid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 23:37:19 by amousaid          #+#    #+#             */
-/*   Updated: 2025/03/15 00:07:29 by amousaid         ###   ########.fr       */
+/*   Updated: 2025/03/17 18:04:01 by amousaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,17 @@ void printElement(T &elem) {
 
 int main()
 {
-	int arr[3] = {1, 5, 9};
-	double arr_d[3] = {1.78, 5.52, 9.4};
+	int arr[] = {1, 5, 9};
+	double arr_d[] = {1.78, 5.52, 9.4};
 
 	std::cout << "before increment: ";
-	iter (arr, 3, printElement);
-	iter (arr_d, 3, printElement);
+	iter (arr, (sizeof (arr) / sizeof(int)), printElement);
+	iter (arr_d, (sizeof (arr_d) / sizeof(double)), printElement);
 	std::cout << std::endl;
-	iter (arr, 3, plus);
-	iter (arr_d, 3, plus);
+	iter (arr, (sizeof (arr) / sizeof(int)), plus);
+	iter (arr_d, (sizeof (arr_d) / sizeof(double)), plus);
 	std::cout << "after increment:  ";
-	iter (arr, 3, printElement);
-	iter (arr_d, 3, printElement);
+	iter (arr, (sizeof (arr) / sizeof(int)), printElement);
+	iter (arr_d, (sizeof (arr_d) / sizeof(double)), printElement);
 	std::cout << std::endl;
 }

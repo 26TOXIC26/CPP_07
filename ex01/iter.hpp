@@ -6,7 +6,7 @@
 /*   By: amousaid <amousaid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/14 23:30:48 by amousaid          #+#    #+#             */
-/*   Updated: 2025/03/15 00:02:06 by amousaid         ###   ########.fr       */
+/*   Updated: 2025/03/17 18:07:10 by amousaid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,11 @@
 #include <iostream>
 
 template<typename A>
-void iter(A *array, int len, void (*fun)(A &))
+void iter(A *array, size_t len, void (*fun)(A &))
 {
-	for (int i = 0; i < len; i++)
+	if (!array || !fun)
+		return ;
+	for (size_t i = 0; i < len; i++)
 		fun(array[i]);
 }
 
